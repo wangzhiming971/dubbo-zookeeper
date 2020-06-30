@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../boot-consumer/boot-consumer.iml" filepath="$PROJECT_DIR$/../boot-consumer/boot-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../boot-provider/boot-provider.iml" filepath="$PROJECT_DIR$/../boot-provider/boot-provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../consumer/consumer.iml" filepath="$PROJECT_DIR$/../consumer/consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../interfence/interfence.iml" filepath="$PROJECT_DIR$/../interfence/interfence.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../provider/provider.iml" filepath="$PROJECT_DIR$/../provider/provider.iml" />
+    </modules>
+  </component>
+</project>

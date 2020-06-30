@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:dubbp="http://dubbo.apache.org/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+        http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd
+        http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+    <!-- 开启springmvc的包扫描 -->
+    <context:component-scan base-package="com.wang.service.impl"/>
+    <!-- 当前服务的名称 -->
+    <dubbp:application name="consumer"  />
+    <!-- 注册中心的地址 这里注册中心用的是zookeeper -->
+    <dubbo:registry protocol="zookeeper" address="127.0.0.1:2181"  />
+    <!-- 声明需要调用的远程服务的接口；生成远程服务代理 -->
+    <dubbo:reference  interface="com.wang.service.UserService" check="false" id="userService" version="1.0.0"  stub="com.wang.service.impl.UserServiceImplStub"/>
+    <!-- 监控中心协议，如果为protocol="registry"，表示从注册中心发现监控中心地址，否则直连监控中心 -->
+    <dubbo:monitor protocol="registry"/>
+</beans>
